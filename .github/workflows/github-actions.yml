@@ -6,7 +6,7 @@ on:
       - '**.sql'
       
 jobs:
-  SQL-script:
+  test:
     runs-on: ubuntu-latest
     services:
       db:
