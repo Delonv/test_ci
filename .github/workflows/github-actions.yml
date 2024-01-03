@@ -1,0 +1,25 @@
+name: Test for skillfactory
+on: 
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: mysql:8
+        ports:
+          - 4497:4497
+        env:
+          MYSQL_DATABASE: Rfam
+          
+    steps:
+      - name: checkout
+        uses: action/checkout@v3
+      - name: Start sql
+        run: mysql --user rfamro --host mysql-rfam-public.ebi.ac.uk --port 4497 --database Rfam
+      - name: run script
+        run: .github/workflow/script.sql
+      
