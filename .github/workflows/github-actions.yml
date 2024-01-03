@@ -2,8 +2,8 @@ name: Test for skillfactory
 on:
   push:
     branches: [ main ]
-    paths:
-      - '**.sql'
+    #paths:
+     # - '**.sql'
       
 jobs:
   test:
@@ -18,8 +18,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Start sql
         run: mysql --user rfamro --host mysql-rfam-public.ebi.ac.uk --port 4497 --database Rfam
-      - name: run script
-     (Вот тут не ясно, как вызвать скрипт)
+      
                      
                                                       
       
