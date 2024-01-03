@@ -17,8 +17,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Start sql
-        run: mysql --user rfamro --host mysql-rfam-public.ebi.ac.uk --port 4497 --database Rfam
-      
-                     
+        run: mysql --user rfamro --host mysql-rfam-public.ebi.ac.uk --port 4497 --database Rfam;
+      - name: Run script
+        run: mysql --user rfamro --host mysql-rfam-public.ebi.ac.uk --port 4497 --database Rfam -e "source .github/sql_script.sql";           
                                                       
       
