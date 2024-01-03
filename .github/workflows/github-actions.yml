@@ -19,5 +19,9 @@ jobs:
       - name: Start sql
         run: mysql --user rfamro --host mysql-rfam-public.ebi.ac.uk --port 4497 --database Rfam
       - name: run script
-        run: .github/workflow/script.sql
+        run: cd /tmp/work
+      - run: git remote add origin https://github.com/Delonv/test_ci
+      - run: git pull origin main
+     
+        
       
