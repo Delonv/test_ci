@@ -2,8 +2,8 @@ name: Test for skillfactory
 on:
   push:
     branches: [ main ]
-    #paths:
-     # - '**.sql'
+    paths:
+      - '**.sql'
       
 jobs:
   test:
